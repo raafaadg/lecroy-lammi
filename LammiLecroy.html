@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>LAMMI - Dados Osciloscópio Lecroy</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" type="image/png" href="http://www.eletrica.ufpr.br/lammi/img/ico.png" />
+
+	
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+
+	<script>
+		window.onload = function () {
+
+		var chart = new CanvasJS.Chart("chartContainer", {
+			animationEnabled: true,
+			zoomEnabled: true,
+			title:{
+				text: "Dados Osciloscópio Lecroy" 
+			},
+			axisY :{
+				includeZero:false
+			},
+			data: data  // random generator below
+		});
+		chart.render();
+
+		}
+
+		var limit = 1000;
+
+		var y = 0;
+		var data = [];
+		var dataSeries = { type: "line" };
+		var dataPoints = [];
+		for (var i = 0; i < limit; i += 1) {
+			y += (Math.random() * 10 - 5);
+			dataPoints.push({
+				x: i ,
+				y: y                
+			});
+		}
+		dataSeries.dataPoints = dataPoints;
+		data.push(dataSeries);               
+
+	</script>
+<script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+	<div class="jumbotron">
+	 	<h2>Dados Osciloscópio Lecroy</h2>
+	 	<p>Dados importadso do osciloscópio Lecroy</p>
+	</div>
+</div>
+<div class="container">
+  <img class="img-fluid" src="headerlammi.png" alt="Header LAMMI" style="width:1500px;height:350px;"> 
+</div>
+
+<div class="container" id="chartContainer" style="height: 370px; width: 100%;">
+</div class="container">
+	<!--<button type="button" 
+	class="btn btn-info btn-block" 
+	onclick="https://mail.google.com/mail/?view=cm&fs=1&to=">Enviar dados pelo Gmail</button>-->
+	<label for="email">Email</label>
+	<input type="email" id="email" placeholder="exemplo@gmail.com" autofocus>
+	<a href=https://mail.google.com/mail/?view=cm&fs=1&to= class="btn btn-default">Enviar dados pelo Gmail</a>
+	<a href=" class="btn btn-default" class="container">DOWNLOAD DADOS</a>
+	<!--<input type="button" onclick="location.href='https://mail.google.com/mail/?view=cm&fs=1&to=';" value="Enviar dados pelo Gmail" />-->
+<div>
+	
+</div>
+	<!-- jQuery -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="vendor/scrollreveal/scrollreveal.min.js"></script>
+    <script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Theme JavaScript -->
+    <script src="js/creative.min.js"></script>
+</body>
+</html>
